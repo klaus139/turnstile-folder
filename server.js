@@ -12,7 +12,7 @@ app.post("/api/v1/turnstile/heartbeat", async (req, res) => {
   console.log("Heartbeat:", req.body);
 
   try {
-    const response = await axios.post(`${LOCAL_URL}/api/v1/turnstile/heartbeat`, req.body);
+    const response = await axios.post(`${RENDER_URL}/api/v1/turnstile/heartbeat`, req.body);
     res.status(200).send(response.data);
   } catch (error) {
     console.error(error);
@@ -32,4 +32,4 @@ app.post("/api/v1/turnstile/access", async (req, res) => {
   }
 });
 
-app.listen(80, () => console.log("Turnstile Proxy Running on Port 80"));
+app.listen(8080, () => console.log("Turnstile Proxy Running on Port 80"));
