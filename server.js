@@ -32,4 +32,4 @@ app.post("/api/v1/turnstile/access", async (req, res) => {
   }
 });
 
-app.listen(8080, () => console.log("Turnstile Proxy Running on Port 80"));
+app.listen(80, () => console.log("Turnstile Proxy Running on Port 8080"));
